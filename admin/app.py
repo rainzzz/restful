@@ -30,7 +30,9 @@ def create_app(config_name):
 
 def configure_extensions(app):
     from .extensions import redis
+    from .extensions import db
     redis.init_app(app)
+    db.init_app(app)
 
 
 def configure_resource(api):
