@@ -3,7 +3,7 @@
 server {
     listen  80;
     server_name 2217admin.zonst.org;
-    root    /Users/zhangyuwei/2217/admin/admin/dist;
+    root    /Users/zhangyuwei/2217/2217admin/admin/templates/dist;
     location / {
         try_files $uri $uri @router;    # 需要指向下面的@router否则会出现vue的路由在nginx中刷新出现404
         index   index.html;
@@ -16,7 +16,7 @@ server {
 server {
     listen  80;
     server_name 2217adminapi.zonst.org;
-    root    /Users/zhangyuwei/2217/admin;
+    root    /Users/zhangyuwei/2217/2217admin;
     location / {
         proxy_pass  http://0.0.0.0:5002;
     }

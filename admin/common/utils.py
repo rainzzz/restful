@@ -1,6 +1,5 @@
 from flask_restful import fields
 
-
 class Resource:
     def __init__(self, resource, *urls, **kwargs):
         self.resource = resource
@@ -19,9 +18,9 @@ class Response:
         self.data = data or {}
 
 
-def make_fields(data: dict) -> dict:
+def make_fields(data=None) -> dict:
     return {
         'code': fields.Integer,
         'msg': fields.String,
-        'data': fields.Nested(data)
+        'data': fields.Nested(data or {})
     }
